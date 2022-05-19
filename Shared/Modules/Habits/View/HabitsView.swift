@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HabitsView: View {
-    @StateObject private var viewModel: HabitsViewModel = .init()
+    @ObservedObject private var viewModel: HabitsViewModel = .init()
+    @State var addNewHabit: Bool = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -31,7 +32,7 @@ struct HabitsView: View {
                 VStack(spacing: 15) {
                     // MARK: Add Habit Button
                     Button {
-
+                        addNewHabit = true
                     } label: {
                         Label {
                             Text("New Habit")
@@ -49,12 +50,15 @@ struct HabitsView: View {
             }
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        .preferredColorScheme(.dark)
+        .sheet(isPresented: $addNewHabit) {
+            AddHabitView()
+        }
     }
 }
 
 struct HabitsView_Previews: PreviewProvider {
     static var previews: some View {
         HabitsView()
+            .preferredColorScheme(.dark)
     }
 }

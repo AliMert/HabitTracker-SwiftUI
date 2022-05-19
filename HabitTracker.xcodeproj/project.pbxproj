@@ -25,6 +25,12 @@
 		E1D53B1D28368DE50089FD3C /* DynamicFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B1B28368DE50089FD3C /* DynamicFilteredView.swift */; };
 		E1D53B21283692740089FD3C /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B20283692740089FD3C /* HabitsViewModel.swift */; };
 		E1D53B22283692740089FD3C /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B20283692740089FD3C /* HabitsViewModel.swift */; };
+		E1D53B262836C0CE0089FD3C /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B252836C0CE0089FD3C /* AddHabitView.swift */; };
+		E1D53B272836C0CE0089FD3C /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B252836C0CE0089FD3C /* AddHabitView.swift */; };
+		E1D53B2A2836C0E10089FD3C /* AddHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B292836C0E10089FD3C /* AddHabitViewModel.swift */; };
+		E1D53B2B2836C0E10089FD3C /* AddHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B292836C0E10089FD3C /* AddHabitViewModel.swift */; };
+		E1D53B2E2836E0D90089FD3C /* CoreDataHabitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B2D2836E0D90089FD3C /* CoreDataHabitManager.swift */; };
+		E1D53B2F2836E0D90089FD3C /* CoreDataHabitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D53B2D2836E0D90089FD3C /* CoreDataHabitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,9 @@
 		E1D53B16283689D90089FD3C /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		E1D53B1B28368DE50089FD3C /* DynamicFilteredView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicFilteredView.swift; sourceTree = "<group>"; };
 		E1D53B20283692740089FD3C /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		E1D53B252836C0CE0089FD3C /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
+		E1D53B292836C0E10089FD3C /* AddHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewModel.swift; sourceTree = "<group>"; };
+		E1D53B2D2836E0D90089FD3C /* CoreDataHabitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHabitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +84,9 @@
 				E1D53B15283689C40089FD3C /* Common */,
 				E1D53B0F283687ED0089FD3C /* App */,
 				E1D53B102836880B0089FD3C /* Modules */,
+				E1D53B2C2836E0CD0089FD3C /* CoreData */,
 				E1D53AEE283685AF0089FD3C /* Persistence.swift */,
 				E1D53AEF283685B20089FD3C /* Assets.xcassets */,
-				E1D53AEA283685AF0089FD3C /* HabitTracker.xcdatamodeld */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -170,6 +179,7 @@
 		E1D53B232836C0670089FD3C /* AddHabit */ = {
 			isa = PBXGroup;
 			children = (
+				E1D53B282836C0D10089FD3C /* ViewModel */,
 				E1D53B242836C0960089FD3C /* View */,
 			);
 			path = AddHabit;
@@ -178,8 +188,26 @@
 		E1D53B242836C0960089FD3C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E1D53B252836C0CE0089FD3C /* AddHabitView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E1D53B282836C0D10089FD3C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E1D53B292836C0E10089FD3C /* AddHabitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E1D53B2C2836E0CD0089FD3C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E1D53AEA283685AF0089FD3C /* HabitTracker.xcdatamodeld */,
+				E1D53B2D2836E0D90089FD3C /* CoreDataHabitManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +312,11 @@
 				E1D53B1C28368DE50089FD3C /* DynamicFilteredView.swift in Sources */,
 				E1D53B03283685B20089FD3C /* Persistence.swift in Sources */,
 				E1D53AFF283685B20089FD3C /* HabitTrackerApp.swift in Sources */,
+				E1D53B2E2836E0D90089FD3C /* CoreDataHabitManager.swift in Sources */,
 				E1D53B142836890E0089FD3C /* HabitsView.swift in Sources */,
+				E1D53B262836C0CE0089FD3C /* AddHabitView.swift in Sources */,
 				E1D53B17283689D90089FD3C /* View+Extensions.swift in Sources */,
+				E1D53B2A2836C0E10089FD3C /* AddHabitViewModel.swift in Sources */,
 				E1D53B01283685B20089FD3C /* ContentView.swift in Sources */,
 				E1D53B21283692740089FD3C /* HabitsViewModel.swift in Sources */,
 			);
@@ -299,8 +330,11 @@
 				E1D53B1D28368DE50089FD3C /* DynamicFilteredView.swift in Sources */,
 				E1D53B19283689FA0089FD3C /* HabitsView.swift in Sources */,
 				E1D53B04283685B20089FD3C /* Persistence.swift in Sources */,
+				E1D53B2F2836E0D90089FD3C /* CoreDataHabitManager.swift in Sources */,
 				E1D53B00283685B20089FD3C /* HabitTrackerApp.swift in Sources */,
+				E1D53B272836C0CE0089FD3C /* AddHabitView.swift in Sources */,
 				E1D53B18283689D90089FD3C /* View+Extensions.swift in Sources */,
+				E1D53B2B2836C0E10089FD3C /* AddHabitViewModel.swift in Sources */,
 				E1D53B02283685B20089FD3C /* ContentView.swift in Sources */,
 				E1D53B22283692740089FD3C /* HabitsViewModel.swift in Sources */,
 			);
