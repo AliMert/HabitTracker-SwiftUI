@@ -60,8 +60,8 @@
 		E1D53AE9283685AF0089FD3C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E1D53AEC283685AF0089FD3C /* HabitTrackerApp.swift */,
-				E1D53AED283685AF0089FD3C /* ContentView.swift */,
+				E1D53B0F283687ED0089FD3C /* App */,
+				E1D53B102836880B0089FD3C /* Modules */,
 				E1D53AEE283685AF0089FD3C /* Persistence.swift */,
 				E1D53AEF283685B20089FD3C /* Assets.xcassets */,
 				E1D53AEA283685AF0089FD3C /* HabitTracker.xcdatamodeld */,
@@ -84,6 +84,22 @@
 				E1D53AFC283685B20089FD3C /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		E1D53B0F283687ED0089FD3C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E1D53AEC283685AF0089FD3C /* HabitTrackerApp.swift */,
+				E1D53AED283685AF0089FD3C /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E1D53B102836880B0089FD3C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
