@@ -12,7 +12,7 @@ final class AddHabitViewModel: ObservableObject {
 
     @Published var title: String = ""
     @Published var habitColor: String = "Card-1"
-    @Published var weekDays: [String] = []
+    @Published var weekdays: [String] = []
     @Published var isReminderOn: Bool = false
     @Published var reminderText: String = ""
     @Published var reminderDate: Date = Date()
@@ -25,4 +25,30 @@ final class AddHabitViewModel: ObservableObject {
 
     // MARK: Notification Access Status
     @Published var notificationAccess: Bool = false
+
+    // MARK: Adding Habit to Database
+    func addHabbit() -> Bool {
+
+        let habit = Habit(context: CoreDataHabitManager.shared.context)
+        habit.title = title
+        habit.color = habitColor
+        habit.weekdays = weekdays
+        habit.isReminderOn = isReminderOn
+        habit.reminderText = reminderText
+        habit.notificationDate = reminderDate
+        habit.dateAdded = Date()
+        habit.notificationIDs = []
+
+        return CoreDataHabitManager.shared.save()
+    }
+
+    // MARK: Done Button Status
+    func doneStatus() -> Bool {
+        let reminderStatus = isReminderOn ? reminderText == "" : false
+
+        if title == "" || weekdays.isEmpty || reminderStatus {
+            return false
+        }
+        return true
+    }
 }

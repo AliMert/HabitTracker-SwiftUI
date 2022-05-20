@@ -9,7 +9,14 @@ import Foundation
 import CoreData
 
 class CoreDataHabitManager: ObservableObject {
+
+    static let shared = CoreDataHabitManager()
+
     private let container: NSPersistentContainer
+
+    var context: NSManagedObjectContext {
+        container.viewContext
+    }
 
     init() {
         container = NSPersistentContainer(name: "HabitTracker")
@@ -29,6 +36,16 @@ class CoreDataHabitManager: ObservableObject {
             completion(habits)
         } catch let error {
             print("Error fetching: \(error)")
+        }
+    }
+
+    func save() -> Bool {
+        do {
+            try context.save()
+            return true
+        } catch let error {
+            print(error)
+            return false
         }
     }
 }

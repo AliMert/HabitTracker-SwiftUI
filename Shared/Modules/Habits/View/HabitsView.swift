@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HabitsView: View {
-    @ObservedObject private var viewModel: HabitsViewModel = .init()
+    @StateObject private var viewModel: HabitsViewModel = .init()
     @State var addNewHabit: Bool = false
 
     var body: some View {
@@ -26,10 +26,13 @@ struct HabitsView: View {
                     }
                 }
 
-
             // Making 'Add Button' Centered When "Habits" is empty
             ScrollView(viewModel.habits.isEmpty ? .init() : .vertical, showsIndicators: false) {
                 VStack(spacing: 15) {
+                    ForEach(viewModel.habits) { habit in
+                        Text(habit.title ?? "Null")
+                            .padding()
+                    }
                     // MARK: Add Habit Button
                     Button {
                         addNewHabit = true

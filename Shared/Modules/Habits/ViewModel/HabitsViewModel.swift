@@ -9,11 +9,10 @@ import SwiftUI
 
 class HabitsViewModel: ObservableObject {
 
-    @EnvironmentObject var coreDataHabitManager: CoreDataHabitManager
     @Published var habits: [Habit] = []
 
     init() {
-        coreDataHabitManager.fetchHabits { [weak self] (habits) in
+        CoreDataHabitManager.shared.fetchHabits { [weak self] (habits) in
             self?.habits = habits
         }
     }
