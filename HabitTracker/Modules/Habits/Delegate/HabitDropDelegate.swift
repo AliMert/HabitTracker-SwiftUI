@@ -10,7 +10,6 @@ import SwiftUI
 struct HabitDropDelegate : DropDelegate {
     private let habit : Habit
     @Binding private var draggedHabit : Habit?
-    @Environment(\.managedObjectContext) private var context
 
     init(draggedHabit: Binding<Habit?>, habit: Habit) {
         self.habit = habit
@@ -30,7 +29,7 @@ struct HabitDropDelegate : DropDelegate {
             let rowID = draggedHabit.rowID
             draggedHabit.rowID = habit.rowID
             habit.rowID = rowID
-            CoreDataHabitManager.save(to: context)
+            CoreDataHabitManager.save(to: CoreDataHabitManager.context)
         }
     }
 }
