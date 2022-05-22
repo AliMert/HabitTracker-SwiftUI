@@ -1,8 +1,8 @@
 # HabitTracker-SwiftUI
 <br>
-In this SwiftUI project, create habits and add reminders to each day to send notification.<br>
+In this SwiftUI project, you can create habits and add reminder to notify you.<br>
 <br>
-The following features are used:
+The following technologies/features are used:
 
 * MVVM design pattern,
 * Core Data,
